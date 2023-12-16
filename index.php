@@ -15,8 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/index.css" rel="stylesheet" />
-        
+        <link href="inicio/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -29,10 +28,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="conocenos.php">Conócenos</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="objetivos.php">Objetivos</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="contact.php">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="index.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="inicio/conocenos.php">Conócenos</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="inicio/tivos.php">Objetivos</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="inicio/contact.php">Contáctanos</a></li>
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" id="login" name="login" onclick="redirigirAotraPagina()">
                         <span class="d-flex align-items-center">
@@ -50,11 +49,14 @@
                         <!-- Mashead text and app badges-->
                         <div class="mb-5 mb-lg-0 text-center text-lg-start">
                             <h1 class="display-1 lh-1 mb-3">La plataforma para una gestión del trabajo más inteligente</h1>
-                            
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                                <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                                <a href="#!"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img class="img-fluid" src="imagenes/logo_transparent.png" alt="Logo Grande" />
+                        <img class="img-fluid" src="assets/img/logo_transparent.png" alt="Logo Grande" />
                         </div>
                     </div>
                 </div>
@@ -81,13 +83,21 @@
                         <p class="lead fw-normal text-muted mb-5 mb-lg-0">El Sistema de Información Miss Datos convierte los procesos infinitos, manuales y complicados en procesos unificados, útiles y efectivos. Para que además de gestionar personas, puedas dedicarte a sacar lo mejor de ellas. Nuestra misión consiste en ayudar a desatar el potencial de cada equipo.</p>
                     </div>
                     <div class="col-sm-8 col-md-6">
-                        <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="imagenes/logo.png" alt="..." /></div>
+                        <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="assets/img/logo.png" alt="..." /></div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- App badge section-->
-       
+        <section class="bg-gradient-primary-to-secondary" id="download">
+            <div class="container px-5">
+                <h2 class="text-center text-white font-alt mb-4">¡Descarga la app ahora!</h2>
+                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                    <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="..." /></a>
+                    <a href="#!"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="..." /></a>
+                </div>
+            </div>
+        </section>
         <!-- Footer-->
         <footer class="bg-black text-center py-5">
             <div class="container px-5">
@@ -104,7 +114,7 @@
     
     <script>
     function redirigirAotraPagina() {
-        window.location.href = "login.php";
+        window.location.href = "Login.php";
     }
     </script>
     </body>

@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "modelo/conexion.php";
 $id_empleado=$_GET["id_empleado"];
 
 $sql=$conexion->query (" select * from empleado where id_empleado= $id_empleado");
@@ -18,7 +18,7 @@ $sql=$conexion->query (" select * from empleado where id_empleado= $id_empleado"
     <h3 class="text-center text-secundary ">Actualizar el Empleados</h3>
     <input type="hidden" name="id_empleado" velue="<?= $_GET["id_empleado"] ?>">
     <?php
-include "actualizar_e.php";
+include "controlador/empleados/actualizar_e.php";
 
   while($datos = $sql->fetch_object()){?>
 

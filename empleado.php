@@ -19,7 +19,7 @@
     <div class="sidebar-content">
         <h2>Empleado</h2>
         <ul>
-            <li><a href="#">Mi perfil</a></li>
+            <li><a href="inicio.php">Mi perfil</a></li>
             
             <li><a href="incapacidades/incapacidades_e.php">Incapacidades</a></li>
             <li><a href="permisos/permiso_e.php">Permisos</a></li>
