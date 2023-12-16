@@ -5,7 +5,7 @@ if (!empty($_POST["btnregistraru"])){
         $rol=$_POST["rol"];
         $usuario=$_POST["usuario"];
         $contrasena=$_POST["contrasena"];
-        $contrasena = hash('sha1',$contrasena, PASSWORD_DEFAULT);
+        
         
 
         $sql=$conexion->query(" insert into usuario(nombre_completo,rol,usuario,contrasena)values('$nombre_completo','$rol','$usuario','$contrasena')");

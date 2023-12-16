@@ -34,7 +34,15 @@ $consulta= "SELECT * FROM usuario WHERE usuario='$usuario' AND contrasena='$cont
                 break;
         }
     }else {
-    header("Location: login.php?error=3");    
+        echo"
+    <script>
+    alert ('no se encontro la cuenta');
+    location.href = 'login.php';
+    </script>
+    
+    ";
 }
+      
+
 }
 mysqli_close($conexion);

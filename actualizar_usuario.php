@@ -39,7 +39,7 @@ include "actualizar_usuario.php";
 
   <div class="mb-1">
     <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" name="contrasena" value="<?=$datos->$hashed_password?>"> 
+    <input type="password" class="form-control" name="contrasena" value="<?=$datos->$contrasena?>"> 
   </div>
 
   
