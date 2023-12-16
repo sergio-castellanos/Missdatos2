@@ -1,8 +1,8 @@
 <?php
-include "conexion.php";
+include "modelo/conexion.php";
 $id_usuario=$_GET["id_usuario"];
 
-$sql=$conexion->query (" select * from usuario where id_usuario= $id_usuario");
+$sql=$conn->query (" select * from usuario where id_usuario= $id_usuario");
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ $sql=$conexion->query (" select * from usuario where id_usuario= $id_usuario");
 </head>
 <body>
 <form class="col-3 p-3 m-auto" method="POST">
-    <h3 class="text-center text-secundary ">Actualizar Usuario</h3>
-    <input type="hidden" name="id_usuario" value="<?= $_GET["id_usuario"] ?>">
+    <h3 class="text-center text-secundary ">Actualizar el Empleados</h3>
+    <input type="hidden" name="id_usuario" velue="<?= $_GET["id_usuario"] ?>">
     <?php
-include "actualizar_usuario.php";
+include "controlador/usuarios/actualizar_usuario.php";
 
   while($datos = $sql->fetch_object()){?>
 

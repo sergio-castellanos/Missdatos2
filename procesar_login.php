@@ -1,40 +1,30 @@
 <?php
-include_once "conexion.php";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $usuario = $_POST["usuario"];
-    $contrasena = $_POST["contrasena"];
-    if(empty($usuario)){
-        header("Location: login.php?error=1");  
-        }
-    if(empty($contrasena)){
-        header("Location: login.php?error=2");     
+require_once "modelo/conexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener datos del formulario
+    $username = $_POST["usuario"];
+    $password = $_POST["contrasena"];
+    
+    
+
+    // Consultar la base de datos para verificar las credenciales
+    $sql = "SELECT * FROM usuario WHERE usuario = '$username' AND contrasena = '$password'";
+    $result = $conn->query($sql);
+
+    if (!$result) {
+        die("Error en la consulta: " . $conn->error);
     }
 
-$consulta= "SELECT * FROM usuario WHERE usuario='$usuario' AND contrasena='$contrasena' ";
-    $resultado=$conexion->query($consulta);
-    if ($resultado->num_rows == 1){
-        $fila = $resultado->fetch_assoc();
-        session_start();
+    if ($result->num_rows > 0) {
+        // Credenciales válidas
+        header('location:admin.php');
 
-        $nombre= $fila["nombre_completo"];
-        $rolActual = $fila["rol"];
-        $Usuario = $fila["usuario"];
-        $contrasena =$fila["contrasena"];
-        $_SESSION["nombre_completo"]=$fila["$nombre_completo"];
-        $_SESSION["rol"] = $rolActual;
-        $_SESSION["usuario"] = $usuario;
-        $_SESSION["contrasena"] = $contrasena;
-        switch($rolActual){
-            case 'admin':
-            
-                header("Location: admin.php");
-                break;
-            case 'empleado':
-                header("Location: empleado.php");
-                break;
-        }
-    }else {
-    header("Location: login.php?error=3");    
+    } else {
+        // Credenciales inválidas
+        echo $sql;
+        echo "Credenciales inválidas. Por favor, inténtelo de nuevo.";
+    }
 }
-}
-mysqli_close($conexion);
+$conn->close();
+?>
