@@ -108,7 +108,7 @@ if(empty($usuario) || empty($rol)){
                             
                             <div class="sb-sidenav-menu-heading">Novedades</div>
                            
-                            <a class="nav-link" href="tables.php">
+                            <a class="nav-link" href="ver_incapacidad.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Ver Incapacidades
                             </a>
@@ -219,7 +219,7 @@ include "eliminar_i.php";
   <tbody>
     <?php
     include "conexion.php";
-    $sql=$conexion->query(" select * from incapacidad ");
+    $sql=$conexion->query(" select *from incapacidad ");
     while($datos = $sql->fetch_object()) { ?>
      <tr>
       <td><?=$datos->id_incapacidad?></td> 
@@ -233,8 +233,8 @@ include "eliminar_i.php";
       <td><?=$datos->soporte?></td>
       
       <td>
-        <a href="actualizar_incapacidad.php? id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
-        <td><a onclick="return eliminar()" href="inicio.php?id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+        
+        <td><a onclick="return eliminar()" href="registrar_incapacidades.php?id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
     </td>
     </tr>  
@@ -257,11 +257,10 @@ include "eliminar_i.php";
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy; Miss datos 2023</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                               
+                                <a href="#">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

@@ -99,7 +99,7 @@ if(empty($usuario) || empty($rol)){
                             
                             <div class="sb-sidenav-menu-heading">Novedades</div>
                            
-                            <a class="nav-link" href="tables.php">
+                            <a class="nav-link" href="ver_incapacidad.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Ver Incapacidades
                             </a>

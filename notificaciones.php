@@ -17,7 +17,7 @@ if(empty($usuario) || empty($rol)){
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Miss Datos - Empleado</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles1.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -30,7 +30,9 @@ if(empty($usuario) || empty($rol)){
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">  
+                <div class="input-group">
+                    
+                    
                 </div>
             </form>
             <!-- Navbar-->
@@ -38,8 +40,11 @@ if(empty($usuario) || empty($rol)){
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="cerrar.php">Cerrar sesión</a></li> 
-                        <li><hr class="dropdown-divider" /></li>   
+                        <li><a class="dropdown-item" href="cerrar.php">Cerrar sesión</a></li>
+                     
+                       
+                        <li><hr class="dropdown-divider" /></li>
+                        
                     </ul>
                 </li>
             </ul>
@@ -51,7 +56,7 @@ if(empty($usuario) || empty($rol)){
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading "></div>
                             <a class="nav-link" href="empleado.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon "><i class="fas fa-tachometer-alt"></i></div>
                                 Empleado
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
@@ -90,56 +95,16 @@ if(empty($usuario) || empty($rol)){
                             </a>
                         </div>
                     </div>
+                  
                 </nav>
             </div>
-<div id="layoutSidenav_content">
-<main>
-<div class="container-fluid px-4">
-<h1 class="mt-4">Solicitud de Permisos</h1><br><br>
-<div>
-<form id="mipermiso" class="needs-validation" method="post" novalidate>
-<div class="form-row">  
-<div class="col-md-6 mb-3">
-    <label for="ident" class="form-label">Identificación</label>
-    <input type="text" class="form-control" id="id" pattern="[0-9]{1,10}" name="id" value="" required>
-    <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-</div>
-  <div class="col-md-6 mb-3">
-    <label for="nombre" class="form-label">Nombre completo</label>
-    <input type="text" class="form-control" id="name" pattern="^[a-zA-Z\s]+$" name="nombre" required>
-    <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <label for="area" class="form-label">Área</label>
-      <input type="text" class="form-control" id="location" pattern="^[a-zA-Z\s]+$" name="area" required>
-      <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-    </div>
-  <div class="col-md-6 mb-3">
-    <label for="fechaini" class="form-label">Fecha de Inicio</label>
-    <input type="date" class="form-control" id="fi" name="finicio" required>
-    <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <label for="fechafin" class="form-label">Fecha de Terminación</label>
-    <input type="date" class="form-control" id="ff"  name="ffin" required>
-    <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <label for="motivo" class="form-label">Motivo del Permiso</label>
-    <textarea class="form-control" id="motivo" placeholder="Motivo del Permiso" pattern="[a-zA-Z]+[0-9]+{1,200}" name="motivo" required></textarea><br>
-    <div class="valid-feedback">Bien!</div>
-  </div>
-  <div class="col-6">
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </div>
-</div>
-</form>
-</main>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Notificaciones</h1>
+                       
+                        <img src="imagenes/logo.png" alt="">
+                                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-tems-center justify-content-between small">
@@ -154,11 +119,9 @@ if(empty($usuario) || empty($rol)){
                 </footer>
             </div>
         </div>
-        <script src="js/scripts.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="js/scriptforms.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> 
     </body>
 </html>

@@ -1,16 +1,18 @@
 <?php
 
-if (!empty($_GET["id_usuario"])){
 
-    $id_usuario=$_GET["id_usuario"];
-    $sql=$conexion->query("delete from usuario where id_usuario=$id_usuario");
+if (!empty($_GET["id_incapacidad"])){
+
+    $id_incapacidad=$_GET["id_incapacidad"];
+    $sql=$conexion->query("delete from incapacidad where id_incapacidad=$id_incapacidad");
 
     if ($sql==1) {
-        echo "<div class='alert alert-success'> Empleado eliminado </div>";
+        echo "<div class='alert alert-success'> Incapacidad  eliminada </div>";
     } else {
         echo "<div class='alert alert-success' > No se pudo eliminar al empleado</div>";
     }
     
 }
+
 
 ?>

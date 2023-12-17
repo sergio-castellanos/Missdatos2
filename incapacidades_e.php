@@ -95,9 +95,9 @@ if(empty($usuario) || empty($rol)){
 <div id="layoutSidenav_content">
 <main>
 <div class="container-fluid px-4">
-<h1 class="mt-4">Solicitud de Permisos</h1><br><br>
+<h1 class="mt-4">Incapacidades</h1><br><br>
 <div>
-<form id="mipermiso" class="needs-validation" method="post" novalidate>
+<form id="miincapacidad" class="needs-validation" method="post" novalidate>
 <div class="form-row">  
 <div class="col-md-6 mb-3">
     <label for="ident" class="form-label">Identificación</label>
@@ -108,6 +108,12 @@ if(empty($usuario) || empty($rol)){
   <div class="col-md-6 mb-3">
     <label for="nombre" class="form-label">Nombre completo</label>
     <input type="text" class="form-control" id="name" pattern="^[a-zA-Z\s]+$" name="nombre" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <label for="eps" class="form-label">EPS</label>
+    <input type="text" class="form-control" id="salud" pattern="^[a-zA-Z\s]+$" name="eps" required>
     <div class="valid-feedback">Bien!</div>
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
@@ -130,9 +136,8 @@ if(empty($usuario) || empty($rol)){
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
   <div class="col-md-6 mb-3">
-    <label for="motivo" class="form-label">Motivo del Permiso</label>
-    <textarea class="form-control" id="motivo" placeholder="Motivo del Permiso" pattern="[a-zA-Z]+[0-9]+{1,200}" name="motivo" required></textarea><br>
-    <div class="valid-feedback">Bien!</div>
+    <input type="file" class="form-control" aria-label="file example" required>
+    <div class="invalid-feedback">Adjunta tu incapacidad</div>
   </div>
   <div class="col-6">
     <button class="btn btn-primary" type="submit">Enviar</button>

@@ -46,8 +46,8 @@ if(empty($usuario) || empty($rol)){
                     
                 </div>
             </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+           <!-- Navbar-->
+           <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -66,7 +66,7 @@ if(empty($usuario) || empty($rol)){
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading "></div>
-                            <a class="nav-link" href="admin.php">
+                            <a class="nav-link" >
                                 <div class="sb-nav-link-icon "><i class="fas fa-tachometer-alt"></i></div>
                                 Administrador
                             </a>
@@ -94,20 +94,23 @@ if(empty($usuario) || empty($rol)){
                                 </nav>
                             </div>
                             
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Incapacidades
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="formularios.php">vacaciones</a>
+                                    <a class="nav-link" href="registrar_incapacidades.php">Registrar Incapacidad</a>
                                     
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.php">
+                            
+                            <div class="sb-sidenav-menu-heading">Novedades</div>
+                           
+                            <a class="nav-link" href="ver_incapacidad.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                Ver Incapacidades
                             </a>
                         </div>
                     </div>
