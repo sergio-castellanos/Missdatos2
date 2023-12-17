@@ -90,24 +90,27 @@ if(empty($usuario) || empty($rol)){
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="registrar_usuarios.php">Registrar Usuario</a>
-                                    <a class="nav-link" href="ver_usuario.php">Ver Usuarios</a>
+                                    <a class="nav-link" href="ver_empleados.php">Ver Usuarios</a>
                                 </nav>
                             </div>
                             
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Incapacidades
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="formularios.php">vacaciones</a>
+                                    <a class="nav-link" href="registrar_incapacidad.php">Registrar Incapacidad</a>
                                     
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
+                            
+                            <div class="sb-sidenav-menu-heading">Novedades</div>
+                           
                             <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                Ver Incapacidades
                             </a>
                         </div>
                     </div>
@@ -133,11 +136,16 @@ if(empty($usuario) || empty($rol)){
 
 <form class="col-3 p-3  " method="POST">
 
-    <h3 class="text-center text-secundary ">Registro De Usuarios</h3>
+    <h3 class="text-center text-secundary ">Registro De Incapacidad</h3>
     <?php
     include "conexion.php";
-    include "registro_u.php";
+    include "registro_i.php";
     ?>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Identificacion</label>
+    <input type="text" class="form-control" name="identificacion"> 
+  </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
@@ -145,23 +153,36 @@ if(empty($usuario) || empty($rol)){
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Rol</label>
-    <input type="text" class="form-control" name="rol"> 
+    <label for="exampleInputEmail1" class="form-label">Eps</label>
+    <input type="text" class="form-control" name="eps"> 
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input type="text" class="form-control" name="usuario"> 
+    <label for="exampleInputEmail1" class="form-label">Fecha De Inicio</label>
+    <input type="date" class="form-control" name="fecha_inicio"> 
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" name="contrasena"> 
+    <label for="exampleInputEmail1" class="form-label">Fecha Final</label>
+    <input type="date" class="form-control" name="fecha_final"> 
   </div>
 
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Cargo</label>
+    <input type="text" class="form-control" name="cargo"> 
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Soporte</label>
+    <input type="file" class="form-control" name="soporte"> 
+  </div>
+
+ 
 
   
-  <button type="submit" class="btn btn-primary" name="btnregistraru" value="ok">Registrar</button>
+
+  
+  <button type="submit" class="btn btn-primary" name="btnregistrari" value="ok">Registrar</button>
   <a class="btn btn-primary" href="admin.php" role="button">atras</a>
   </form>
 
@@ -169,16 +190,19 @@ if(empty($usuario) || empty($rol)){
   <div class=" col-8 p-4">
 <table  class="display nowrap" style="width:100%"  id="">
   <thead class="bg-info bg-info">
-    <h1 class="text-center">Gestionar Empleados</h1>
+    <h1 class="text-center">Gestionar Incapacidad</h1>
     <tr>
-      <th scope="col">Id usuario</th>
-      
+      <th scope="col">Id incapacidad</th>
+      <th scope="col">Identificacion</th>
       <th scope="col">Nombre Completo</th>
-     
-     
-      <th scope="col">Rol</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Contraseña</th>
+      <th scope="col">Eps</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha final</th>
+      
+      <th scope="col">Cargo</th>
+      <th scope="col">Soporte</th>
+      
+      
       <th scope="col"></th>
       <th scope="col"></th>
      
@@ -187,7 +211,7 @@ if(empty($usuario) || empty($rol)){
       
       <?php
 include "conexion.php";
-include "eliminar_u.php";
+include "eliminar_i.php";
 
 ?>
     </tr>
@@ -195,21 +219,22 @@ include "eliminar_u.php";
   <tbody>
     <?php
     include "conexion.php";
-    $sql=$conexion->query(" select * from usuario ");
+    $sql=$conexion->query(" select * from incapacidad ");
     while($datos = $sql->fetch_object()) { ?>
      <tr>
-      <td><?=$datos->id_usuario?></td> 
-      
+      <td><?=$datos->id_incapacidad?></td> 
+      <td><?=$datos->identificacion?></td>
       <td><?=$datos->nombre_completo?></td>
+      <td><?=$datos->eps?></td>
+      <td><?=$datos->fecha_inicio?></td>
+      <td><?=$datos->fecha_final?></td>
       
-      
-      <td><?=$datos->rol?></td>
-      <td><?=$datos->usuario?></td>
-      <td><?=$datos->contrasena?></td>
+      <td><?=$datos->cargo?></td>
+      <td><?=$datos->soporte?></td>
       
       <td>
-        <a href="actualizar_usuario.php? id_usuario=<?= $datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
-        <td><a onclick="return eliminar()" href="registrar_usuarios.php?id_usuario=<?= $datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+        <a href="actualizar_incapacidad.php? id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
+        <td><a onclick="return eliminar()" href="inicio.php?id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
     </td>
     </tr>  
@@ -262,25 +287,6 @@ include "eliminar_u.php";
 
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

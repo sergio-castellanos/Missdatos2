@@ -81,24 +81,27 @@ if(empty($usuario) || empty($rol)){
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="registrar_usuarios.php">Registrar Usuario</a>
-                                    <a class="nav-link" href="ver_empleados.php">Ver Usuarios</a>
+                                    <a class="nav-link" href="ver_usuario.php">Ver Usuarios</a>
                                 </nav>
                             </div>
                             
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Incapacidades
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="formularios.php">vacaciones</a>
+                                    <a class="nav-link" href="registrar_incapacidades.php">Registrar Incapacidad</a>
                                     
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
+                            
+                            <div class="sb-sidenav-menu-heading">Novedades</div>
+                           
                             <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                Ver Incapacidades
                             </a>
                         </div>
                     </div>
@@ -109,6 +112,9 @@ if(empty($usuario) || empty($rol)){
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Bienvenido</h1>
+                        <?php
+                        echo "<h1>$usuario</h1>";
+                        ?>
                         <img src="imagenes/logo.png" alt="">
                                  </main>
                 <footer class="py-4 bg-light mt-auto">

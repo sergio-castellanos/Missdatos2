@@ -1,3 +1,12 @@
+$(document).ready(function() {
+  $('#empleados').DataTable( {
+      dom: 'Bfrtip',
+      buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+  } );
+} );
+
 
     // Inicializar DataTable
     $(document).ready(function() {
@@ -36,4 +45,4 @@
       });
       doc.save('archivo_pdf.pdf');
     }
-  
+ 

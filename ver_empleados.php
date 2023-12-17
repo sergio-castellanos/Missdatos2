@@ -80,7 +80,7 @@ if(empty($usuario) || empty($rol)){
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading "></div>
-                            <a class="nav-link" href="index.php">
+                            <a class="nav-link" href="admin.php">
                                 <div class="sb-nav-link-icon "><i class="fas fa-tachometer-alt"></i></div>
                                 Administrador
                             </a>
@@ -144,6 +144,8 @@ if(empty($usuario) || empty($rol)){
 <div class=" col-8 p-4">
 <table  class="display nowrap" style="width:100%"  id="empleados">
   <thead class="bg-info bg-info">
+ 
+ 
     <tr>
       <th scope="col">Id empleado</th>
       <th scope="col">Identificacion</th>
