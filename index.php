@@ -32,7 +32,7 @@
                         
                         <li class="nav-item"><a class="nav-link me-lg-3" href="conocenos.php">Conócenos</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="objetivos.php">Objetivos</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="contact.php">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="contactenos.php">Contáctanos</a></li>
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" id="login" name="login" onclick="redirigirAotraPagina()">
                         <span class="d-flex align-items-center">

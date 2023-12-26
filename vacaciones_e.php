@@ -77,83 +77,171 @@ if(empty($usuario) || empty($rol)){
                                 </nav>
                             </div>
                             
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                           
+                           
                             </div>
-                            <div class="sb-sidenav-menu-heading">Gestionar</div>
-                            <a class="nav-link" href="miperfil_e.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Mi Perfil
-                            </a>
-                            <a class="nav-link" href="notificaciones.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Notificaciones
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-<div id="layoutSidenav_content">
-<main>
-<div class="container-fluid px-4">
-<h1 class="mt-4">Solicitud de Vacaciones</h1><br><br>
-<div>
-<form id="misvacas" class="needs-validation" method="post" novalidate>
-<div class="form-row">  
-<div class="col-md-6 mb-3">
+                    
+                    </nav>
+                </div>
+                <div id="layoutSidenav_content">
+                    <main>
+                        <div class="container-fluid px-4">
+                            <h1 class="mt-4"></h1>
+    
+                            <div class="container-fluid row">
+    
+    <script>
+            function eliminar (){
+                var respuesta=confirm("Estas seguro que deseas eliminar?");
+                return respuesta
+            }
+        </script>
+    
+    
+    <div class="container-fluid row">
+    <div class="col-3 p-3 ">
+    <form id="rempleados" class="needs-validation" method="POST" novalidate>
+        <h3 class="text-center text-secundary ">Registro de Vacaciones</h3>
+    
+        <?php
+        include "conexion.php";
+        include "registro_v.php";
+        ?> 
+
+
+<div class="mb-3">
     <label for="ident" class="form-label">Identificación</label>
-    <input type="text" class="form-control" id="id" pattern="[0-9]{1,10}" name="id" value="" required>
+    <input type="text" class="form-control" id="id_per" pattern="[0-9]{1,10}" name="identificacion" value="" required>
     <div class="valid-feedback">Bien!</div>
     <div class="invalid-feedback">Prueba otra vez.</div>
 </div>
-  <div class="col-md-6 mb-3">
+
+<div class="mb-3">
     <label for="nombre" class="form-label">Nombre completo</label>
-    <input type="text" class="form-control" id="name" pattern="^[a-zA-Z\s]+$" name="nombre" required>
+    <input type="text" class="form-control" id="name" pattern="^[a-zA-Z\s]+$" name="nombre_completo" required>
     <div class="valid-feedback">Bien!</div>
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
-  <div class="col-md-6 mb-3">
-    <label for="cargo" class="form-label">Cargo</label>
-      <input type="text" class="form-control" id="krgo" pattern="^[a-zA-Z\s]+$" name="cargo" required>
-      <div class="valid-feedback">Bien!</div>
-    <div class="invalid-feedback">Prueba otra vez.</div>
-    </div>
-  <div class="col-md-6 mb-3">
+  
+  <div class=" mb-3">
     <label for="fechaini" class="form-label">Fecha de Inicio</label>
-    <input type="date" class="form-control" id="fi" name="finicio" required>
+    <input type="date" class="form-control" id="fi" name="fecha_inicio" required>
     <div class="valid-feedback">Bien!</div>
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
-  <div class="col-md-6 mb-3">
+  <div class="mb-3">
     <label for="fechafin" class="form-label">Fecha de Terminación</label>
-    <input type="date" class="form-control" id="ff"  name="ffin" required>
+    <input type="date" class="form-control" id="ff"  name="fecha_final" required>
     <div class="valid-feedback">Bien!</div>
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
-  <div class="col-md-12 mb-3">
-    <center><br><br><button class="btn btn-primary" type="submit">Enviar</button></center>
+
+ 
+
+  
+  <div class="mb-3">
+    <label for="motivo" class="form-label">cargo</label>
+    <input type="text" class="form-control" id="cargo"  name="cargo" required>
+    <div class="valid-feedback">Bien!</div>
   </div>
+
+  
+  
+  
+  <button type="submit" class="btn btn-primary" name="btnregistrarv" value="ok">Registrar</button>
+  <a class="btn btn-primary" href="empleado.php" role="button">Atrás</a>
+  </form>
+    
+    </div>
+
+<div class=" col-9 p-4">
+<table  class="display nowrap" style="width:100%"  id="">
+  <thead class="bg-info bg-info">
+  <h1 class="text-center">Gestionar Vacaciones</h1>
+    <tr>
+      <th scope="col">Id Vacaciones</th>
+      <th scope="col">Identificacion</th>
+      <th scope="col">Nombre Completo</th>
+     
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha final</th>
+      
+      <th scope="col">Cargo</th>
+      
+      
+      
+      <th scope="col"></th>
+      <th scope="col"></th>
+     
+     
+
+
+      
+      <?php
+include "conexion.php";
+include "eliminar_v.php";
+
+?>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    include "conexion.php";
+    $sql=$conexion->query(" select * from vacaciones");
+    while($datos = $sql->fetch_object()) { ?>
+     
+     
+     
+     <tr>
+      <td><?=$datos->id_vacaciones?></td> 
+      <td><?=$datos->identificacion?></td>
+      <td><?=$datos->nombre_completo?></td>
+      
+      <td><?=$datos->fecha_inicio?></td>
+      <td><?=$datos->fecha_final?></td>
+      
+      <td><?=$datos->cargo?></td>
+      
+      
+      <td>
+      <a href="actualizar_vacaciones.php? id_vacaciones=<?= $datos->id_vacaciones?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
+        <td><a onclick="return eliminar()" href="vacaciones_e.php?id_vacaciones=<?= $datos->id_vacaciones?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+        
+        </td>
+    </tr>  
+    <?php }
+    ?>
+    
+</tbody>
+</table>
 </div>
-</form>
+</div>
 </main>
-                <footer class="py-4 bg-light mt-auto">
+<footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
-                        <div class="d-flex align-tems-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Miss Datos Colombia 2023</div>
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
                             <div>
-                                <a href="#">Politicas de Privacidad</a>
+                                <a href="#">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Términos &amp; Condiciones</a>
+                                <a href="#">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div>
         </div>
-        <script src="js/scripts.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="js/scriptforms.js"></script>
-    </body>
+  
+    <script src="js/scriptforms.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="js/script_dt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
+  </body>
 </html>
