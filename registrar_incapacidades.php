@@ -112,6 +112,15 @@ if(empty($usuario) || empty($rol)){
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Ver Incapacidades
                             </a>
+                            <a class="nav-link" href="ver_permiso.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Ver Permisos
+                            </a>
+
+                            <a class="nav-link" href="ver_incapacidad.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Ver Vacaciones
+                            </a>
                         </div>
                     </div>
                     
@@ -124,7 +133,7 @@ if(empty($usuario) || empty($rol)){
 
                         <div class="container-fluid row">
 
-<script>
+                        <script>
         function eliminar (){
             var respuesta=confirm("Estas seguro que deseas eliminar?");
             return respuesta
@@ -133,64 +142,76 @@ if(empty($usuario) || empty($rol)){
 
 
 <div class="container-fluid row">
+<div class="col-3 p-3 ">
+<form id="rempleados" class="needs-validation" method="POST" novalidate>
+    <h3 class="text-center text-secundary ">Registro de Empleados</h3>
 
-<form class="col-3 p-3  " method="POST">
-
-    <h3 class="text-center text-secundary ">Registro De Incapacidad</h3>
     <?php
     include "conexion.php";
     include "registro_i.php";
     ?>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Identificacion</label>
-    <input type="text" class="form-control" name="identificacion"> 
+    <label for="id_emp" class="form-label">Identificación</label>
+    <input type="text" class="form-control" name="identificacion" id="id_emp" pattern="[0-9]{1,10}" value="" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
-    <input type="text" class="form-control" name="nombre_completo"> 
+    <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
+    <input type="text" class="form-control" id="name"  name="nombre_completo" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Eps</label>
-    <input type="text" class="form-control" name="eps"> 
+    <input type="text" class="form-control" id="eps"  name="eps" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Fecha De Inicio</label>
-    <input type="date" class="form-control" name="fecha_inicio"> 
+    <label for="exampleInputEmail1" class="form-label">Fecha de Inicio</label>
+    <input type="date" class="form-control" name="fecha_inicio" required> 
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Fecha Final</label>
-    <input type="date" class="form-control" name="fecha_final"> 
+    <label for="exampleInputEmail1" class="form-label">Fecha final</label>
+    <input type="date" class="form-control" name="fecha_final" required> 
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
-  <div class="mb-3">
+
+
+ <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Cargo</label>
-    <input type="text" class="form-control" name="cargo"> 
-  </div>
+    <input type="text" class="form-control" id="cargo" pattern="^[a-zA-Z\s]+$" name="cargo" required>
+      <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
+    </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Soporte</label>
-    <input type="file" class="form-control" name="soporte"> 
+    <input type="file" class="form-control" id="soporte" name="soporte" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> 
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
- 
-
-  
-
-  
   <button type="submit" class="btn btn-primary" name="btnregistrari" value="ok">Registrar</button>
-  <a class="btn btn-primary" href="admin.php" role="button">atras</a>
+  <a class="btn btn-primary" href="admin.php" role="button">Atrás</a>
   </form>
+    
+    </div>
 
-
-  <div class=" col-8 p-4">
+<div class=" col-6 p-4">
 <table  class="display nowrap" style="width:100%"  id="">
   <thead class="bg-info bg-info">
-    <h1 class="text-center">Gestionar Incapacidad</h1>
+  <h1 class="text-center">Gestionar Incapacidad</h1>
     <tr>
       <th scope="col">Id incapacidad</th>
       <th scope="col">Identificacion</th>
@@ -206,6 +227,7 @@ if(empty($usuario) || empty($rol)){
       <th scope="col"></th>
       <th scope="col"></th>
      
+     
 
 
       
@@ -219,7 +241,7 @@ include "eliminar_i.php";
   <tbody>
     <?php
     include "conexion.php";
-    $sql=$conexion->query(" select *from incapacidad ");
+    $sql=$conexion->query(" select * from incapacidad ");
     while($datos = $sql->fetch_object()) { ?>
      <tr>
       <td><?=$datos->id_incapacidad?></td> 
@@ -233,63 +255,44 @@ include "eliminar_i.php";
       <td><?=$datos->soporte?></td>
       
       <td>
-        
+
         <td><a onclick="return eliminar()" href="registrar_incapacidades.php?id_incapacidad=<?= $datos->id_incapacidad?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
-    </td>
+        </td>
     </tr>  
     <?php }
     ?>
     
-  </tbody>
+</tbody>
 </table>
 </div>
-
-
 </div>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-                        
-                </main>
-                <footer class="py-4 bg-light mt-auto">
+</main>
+<footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Miss datos 2023</div>
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
                             <div>
-                               
-                                <a href="#">Terminos &amp; Condiciones</a>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div>
         </div>
-       
-        
-       <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="js/script_dt.js"></script>
+  
+    <script src="js/scriptforms.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="js/script_dt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
-
-
-
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
-
-
-    </body>
+  </body>
 </html>
-
-
-
-
-
-
-

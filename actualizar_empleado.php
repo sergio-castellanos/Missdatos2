@@ -29,6 +29,7 @@ $sql=$conexion->query (" select * from empleado where id_empleado= $id_empleado"
 
     </head>
     <body>
+      
 <form class="col-3 p-3 m-auto" method="POST">
     <h3 class="text-center text-secundary ">Actualizar el Empleados</h3>
     <input type="hidden" name="id_empleado" velue="<?= $_GET["id_empleado"] ?>">

@@ -7,8 +7,6 @@ if (!empty($_POST["btnregistrari"])){
         $eps=$_POST["eps"];
         $fecha_inicio=$_POST["fecha_inicio"];
         $fecha_final=$_POST["fecha_final"];
-        
-       
         $cargo=$_POST["cargo"];
         $soporte=$_POST["soporte"];
        
@@ -16,10 +14,10 @@ if (!empty($_POST["btnregistrari"])){
         $sql=$conexion->query("insert into incapacidad(identificacion,nombre_completo,eps,fecha_inicio,fecha_final,cargo,soporte)values('$identificacion','$nombre_completo','$eps','$fecha_inicio','$fecha_final','$cargo','$soporte')");
 
             if ($sql==1) {
-                echo '<div class="alert alert-success">Se registro correctamente el empleado</div>';
+                echo '<div class="alert alert-success">Se registro correctamente la incapacidad</div>';
                 
             } else {
-                echo '<div class="alert alert-danger">Error al registrar el empleado</div>';
+                echo '<div class="alert alert-danger">Error al registrar incapacidad</div>';
             }  
         
     } else {

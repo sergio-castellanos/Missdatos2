@@ -81,7 +81,7 @@ if(empty($usuario) || empty($rol)){
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading "></div>
-                            <a class="nav-link" >
+                            <a class="nav-link" href="admin.php">
                                 <div class="sb-nav-link-icon "><i class="fas fa-tachometer-alt"></i></div>
                                 Administrador
                             </a>
@@ -109,12 +109,12 @@ if(empty($usuario) || empty($rol)){
                                 </nav>
                             </div>
                             
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages1" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Incapacidades
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapsePages1" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="registrar_incapacidades.php">Registrar Incapacidad</a>
                                     
@@ -126,6 +126,15 @@ if(empty($usuario) || empty($rol)){
                             <a class="nav-link" href="ver_incapacidad.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Ver Incapacidades
+                            </a>
+                            <a class="nav-link" href="ver_permiso.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Ver Permisos
+                            </a>
+
+                            <a class="nav-link" href="ver_incapacidad.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Ver Vacaciones
                             </a>
                         </div>
                     </div>

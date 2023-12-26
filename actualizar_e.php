@@ -14,7 +14,7 @@ if (!empty($_POST["btnactualizar"])){
     
     $sql=$conexion->query("update empleado set identificacion='$identificacion', nombre_completo='$nombre_completo',fecha_nacimiento='$fecha_nacimiento',direccion='$direccion',telefono='$telefono',cargo='$cargo',correo='$correo' where id_empleado = $id_empleado");
 if ($sql==1) {
-    header("location:ver_empleados.php");
+    header("location: ver_empleados.php");
     
 } else {
          echo "<div class='alert alert-warning'>No se actualizo</div>";
