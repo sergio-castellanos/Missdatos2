@@ -2,7 +2,7 @@
 include "conexion.php";
 $id_empleado=$_GET["id_empleado"];
 
-$sql=$conexion->query (" select * from empleado where id_empleado= $id_empleado");
+$sql=$conexion->query (" select * from empleado where id_empleado=$id_empleado");
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $sql=$conexion->query (" select * from empleado where id_empleado= $id_empleado"
       
 <form class="col-3 p-3 m-auto" method="POST">
     <h3 class="text-center text-secundary ">Actualizar el Empleados</h3>
-    <input type="hidden" name="id_empleado" velue="<?= $_GET["id_empleado"] ?>">
+    <input type="hidden" name="id_empleado" velue="<?=$_GET["id_empleado"] ?>">
     <?php
 include "actualizar_e.php";
 
@@ -81,7 +81,7 @@ include "actualizar_e.php";
  
   
   <button type="submit" class="btn btn-primary" name="btnactualizare" value="ok">Actualizar empleado</button>
-
+    
 </form>
 
 
