@@ -1,6 +1,6 @@
 <?php
 
-if (!empty($_POST["btnactualizar"])){
+if (!empty($_POST["btnactualizare"])){
 
    if (!empty($_POST["identificacion"])  and !empty($_POST["nombre_completo"]) and !empty($_POST["fecha_nacimiento"]) and !empty($_POST["direccion"]) and !empty($_POST["telefono"]) and !empty($_POST["cargo"]) and !empty($_POST["correo"])){
     $id_producto=$_POST["id_empleado"];

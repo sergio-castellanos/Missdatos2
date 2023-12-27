@@ -273,7 +273,7 @@ include "eliminar_p.php";
       
       <td>
 
-        <td><a onclick="return eliminar()" href="permiso_e.php?id_permiso=<?= $datos->id_permiso?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+        <td><a onclick="return eliminar()" href="registrar_permiso.php?id_permiso=<?= $datos->id_permiso?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
         </td>
     </tr>  

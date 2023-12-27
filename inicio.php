@@ -174,7 +174,7 @@ if(empty($usuario) || empty($rol)){
 
     <?php
     include "conexion.php";
-    include "registro_p.php";
+    include "registro_e.php";
     ?>
 
   <div class="mb-3">
@@ -225,7 +225,7 @@ if(empty($usuario) || empty($rol)){
     <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
-  <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
+  <button type="submit" class="btn btn-primary" name="btnregistrare" value="ok">Registrar</button>
   <a class="btn btn-primary" href="admin.php" role="button">Atrás</a>
   </form>
     

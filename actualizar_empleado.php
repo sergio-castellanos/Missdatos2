@@ -80,7 +80,7 @@ include "actualizar_e.php";
 
  
   
-  <button type="submit" class="btn btn-primary" name="btnactualizar" value="ok">Actualizar empleado</button>
+  <button type="submit" class="btn btn-primary" name="btnactualizare" value="ok">Actualizar empleado</button>
 
 </form>
 
