@@ -196,7 +196,7 @@ if(empty($usuario) || empty($rol)){
      
       
       <button onclick="exportarExcel()">Descargar Excel</button>
-      <button onclick="PDF()">Descargar PDF</button>
+      
 
 
       

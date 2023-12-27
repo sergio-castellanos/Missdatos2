@@ -273,7 +273,7 @@ include "eliminar_e.php";
       <td><?=$datos->correo?></td>
       
       <td>
-        <a href="actualizar_empleado.php? id_empleado=<?= $datos->id_empleado?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
+        <a href="actualizar_empleado.php?id_empleado=<?= $datos->id_empleado?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
         <td><a onclick="return eliminar()" href="inicio.php?id_empleado=<?= $datos->id_empleado?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
         </td>

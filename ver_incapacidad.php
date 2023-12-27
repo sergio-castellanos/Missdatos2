@@ -192,7 +192,7 @@ if(empty($usuario) || empty($rol)){
       <th scope="col">Soporte</th>
       
       <button onclick="exportarExcel()">Descargar Excel</button>
-      <button onclick="PDF()">Descargar PDF</button>
+      
 
 
       
