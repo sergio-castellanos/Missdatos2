@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#empleados').DataTable( {
       dom: 'Bfrtip',
       buttons: [
-          'copy', 'csv', 'excel', 'pdf', 'print'
+           'excel', 'pdf', 'print'
       ]
   } );
 } );
@@ -19,13 +19,15 @@ $(document).ready(function() {
     function exportarExcel() {
       var dataTable = $('#empleados').DataTable();
       var data = dataTable.rows().data().toArray();
+      
 
       var ws = XLSX.utils.aoa_to_sheet(data);
       var wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, 'Hoja1');
       XLSX.writeFile(wb, 'archivo_excel.xlsx');
     }
-
+   
+  
     
 
     // Función para exportar a PDF
