@@ -164,45 +164,53 @@ if(empty($usuario) || empty($rol)){
         }
     </script>
 
-
+ 
 <div class="container-fluid row">
+    <div class="col-3 p-3 ">
+    <form id="rempleados" class="needs-validation" method="POST" novalidate>
+        <h3 class="text-center text-secundary ">Registro de Usuario</h3>
+    
+        <?php
+        include "conexion.php";
+        include "registro_u.php";
+        ?> 
 
-<form class="col-3 p-3  " method="POST">
+<div class="mb-3">
+    <label for="nombre" class="form-label">Nombre completo</label>
+    <input type="text" class="form-control" id="name" pattern="^[a-zA-Z\s]+$" name="nombre_completo" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
+  </div>
 
-    <h3 class="text-center text-secundary ">Registro De Usuarios</h3>
-    <?php
-    include "conexion.php";
-    include "registro_u.php";
-    ?>
-
+  
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
-    <input type="text" class="form-control" name="nombre_completo"> 
+    <label for="motivo" class="form-label">Rol</label>
+    <input type="text" class="form-control" id="rol"  name="rol" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Rol</label>
-    <input type="text" class="form-control" name="rol"> 
+    <label for="motivo" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="usuario"  name="usuario" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input type="text" class="form-control" name="usuario"> 
+    <label for="motivo" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="contrasena"  name="contrasena" required>
+    <div class="valid-feedback">Bien!</div>
+    <div class="invalid-feedback">Prueba otra vez.</div>
   </div>
-
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" name="contrasena"> 
-  </div>
-
 
   
   <button type="submit" class="btn btn-primary" name="btnregistraru" value="ok">Registrar</button>
   <a class="btn btn-primary" href="admin.php" role="button">atras</a>
   </form>
+    </div>
 
-
-  <div class=" col-8 p-4">
+  <div class=" col-9 p-4">
 <table  class="display nowrap" style="width:100%"  id="">
   <thead class="bg-info bg-info">
     <h1 class="text-center">Gestionar Empleados</h1>
@@ -279,7 +287,7 @@ include "eliminar_u.php";
                 </footer>
             </div>
         </div>
-       
+        <script src="js/scriptforms.js"></script>   
         
        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>

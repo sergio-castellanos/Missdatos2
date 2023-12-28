@@ -267,7 +267,7 @@ include "eliminar_v.php";
       
       <td>
       <a href="actualizar_vacaciones.php? id_vacaciones=<?= $datos->id_vacaciones?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a></td>
-        <td><a onclick="return eliminar()" href="vacaciones_e.php?id_vacaciones=<?= $datos->id_vacaciones?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+        <td><a onclick="return eliminar()" href="registrar_vacaciones.php?id_vacaciones=<?= $datos->id_vacaciones?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
         
         </td>
     </tr>  

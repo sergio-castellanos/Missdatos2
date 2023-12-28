@@ -175,7 +175,7 @@ if(empty($usuario) || empty($rol)){
 
 
 <body >
-<div class=" col-8 p-4">
+<div class=" col-12 p-4">
 <table  class="display nowrap" style="width:100%"  id="empleados">
   <thead class="bg-info bg-info">
  
@@ -191,7 +191,7 @@ if(empty($usuario) || empty($rol)){
       <th scope="col">Cargo</th>
       <th scope="col">Soporte</th>
       
-      <button onclick="exportarExcel()">Descargar Excel</button>
+      
       
 
 

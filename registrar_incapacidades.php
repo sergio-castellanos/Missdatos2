@@ -232,7 +232,7 @@ if(empty($usuario) || empty($rol)){
     
     </div>
 
-<div class=" col-6 p-4">
+<div class=" col-9 p-4">
 <table  class="display nowrap" style="width:100%"  id="">
   <thead class="bg-info bg-info">
   <h1 class="text-center">Gestionar Incapacidad</h1>

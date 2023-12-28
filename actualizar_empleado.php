@@ -74,13 +74,13 @@ include "actualizar_e.php";
     <input type="email" class="form-control" name="correo" value="<?=$datos->correo?>"> 
   </div>
 
-
+  <button type="submit" class="btn btn-primary" name="btnactualizare" value="ok">Actualizar empleado</button>
   <?php }
     ?>
 
  
   
-  <button type="submit" class="btn btn-primary" name="btnactualizare" value="ok">Actualizar empleado</button>
+  
     
 </form>
 

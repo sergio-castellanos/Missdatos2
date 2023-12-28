@@ -82,17 +82,7 @@ if(empty($usuario) || empty($rol)){
                                 </nav>
                             </div>
                             
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            </div>
-                            <div class="sb-sidenav-menu-heading">Gestionar</div>
-                            <a class="nav-link" href="miperfil_e.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Mi Perfil
-                            </a>
-                            <a class="nav-link" href="notificaciones.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Notificaciones
-                            </a>
+                            
                         </div>
                     </div>
                   
